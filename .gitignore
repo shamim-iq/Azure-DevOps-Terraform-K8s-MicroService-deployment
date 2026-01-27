@@ -1,0 +1,50 @@
+# ===============================
+# Python / Virtual Environments
+# ===============================
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ===============================
+# OS / Editor Artifacts
+# ===============================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===============================
+# Logs
+# ===============================
+*.log
+
+# ===============================
+# Terraform (State must be remote)
+# ===============================
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+crash.log
+
+# ===============================
+# Kubernetes / Cloud
+# ===============================
+*.kubeconfig
+
+# ===============================
+# Secrets / Env files
+# ===============================
+.env
+.env.*
+*.pem
+*.key
+
+# ===============================
+# Docker artifacts
+# ===============================
+*.tar
