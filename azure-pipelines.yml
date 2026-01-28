@@ -54,10 +54,9 @@ stages:
       name: ey-vm-pool
     steps:
     - script: |
-        sudo apt-get install wget -y
-        wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_0.50.0_Linux-64bit.tar.gz
-        tar zxvf trivy_0.50.0_Linux-64bit.tar.gz
-        ./trivy image $(acrLoginServer)/backend:$(imageTag)
+        trivy --version
+        trivy image $(acrLoginServer)/backend:$(imageTag)
+        trivy image $(acrLoginServer)/frontend:$(imageTag)
       displayName: Trivy Image Scan
 
 # =========================
