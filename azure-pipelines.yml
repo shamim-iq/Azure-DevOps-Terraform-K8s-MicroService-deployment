@@ -19,7 +19,7 @@ stages:
   jobs:
   - job: BuildImages
     pool:
-      vmImage: ubuntu-latest
+      name: ey-vm-pool
     steps:
     - checkout: self
 
@@ -51,7 +51,7 @@ stages:
   jobs:
   - job: TrivyScan
     pool:
-      vmImage: ubuntu-latest
+      name: ey-vm-pool
     steps:
     - script: |
         sudo apt-get install wget -y
@@ -69,7 +69,7 @@ stages:
   jobs:
   - job: DeployAKS
     pool:
-      vmImage: ubuntu-latest
+      name: ey-vm-pool
     steps:
     - task: AzureCLI@2
       displayName: Configure kubectl
@@ -102,7 +102,7 @@ stages:
   jobs:
   - job: RollbackJob
     pool:
-      vmImage: ubuntu-latest
+      name: ey-vm-pool
     steps:
     - script: |
         kubectl rollout undo deployment/backend
