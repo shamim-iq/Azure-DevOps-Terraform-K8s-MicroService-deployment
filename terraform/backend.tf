@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 1.5.0"
 
   backend "azurerm" {
-    resource_group_name  = "tfstate-rg"
+    resource_group_name  = "EY-RG"
     storage_account_name = "eytfstateacct"
     container_name       = "tfstate"
     key                  = "aks-devops-assignment.tfstate"
