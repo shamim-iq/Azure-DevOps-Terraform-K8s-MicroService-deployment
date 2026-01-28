@@ -27,8 +27,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   default_node_pool {
     name       = "system"
     node_count = 2
-    vm_size    = "Standard_DS2_v2"
-    zones      = ["1"]   # Canada Central – Zone 1
+    vm_size    = "Standard_B2ms"
   }
 
   #  Enable Managed Identity for the AKS cluster
@@ -65,13 +64,6 @@ resource "azurerm_key_vault" "kv" {
 
 data "azurerm_client_config" "current" {}
 
-
-# 6. No use but example of external secret management using Key Vault
-resource "azurerm_key_vault_secret" "backend_secret" {
-  name         = "backend-api-key"
-  value        = "dummy-secret-value"
-  key_vault_id = azurerm_key_vault.kv.id
-}
 
 # 7. Log Analytics Workspace for AKS Monitoring
 resource "azurerm_log_analytics_workspace" "law" {
