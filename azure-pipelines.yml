@@ -7,7 +7,7 @@ variables:
   acrName: eydevopsacr
   acrLoginServer: eydevopsacr.azurecr.io
   aksClusterName: ey-devops-aks
-  aksResourceGroup: ey-devops-rg
+  aksResourceGroup: EY-RG
   imageTag: $(Build.BuildId)
 
 stages:
